@@ -29,5 +29,11 @@ func Router() *gin.Engine {
 		})
 	}
 
+	order := router.Group("/order")
+	{
+		order.GET("/:id", controller.OrderController{}.GetById)
+		order.POST("/query", controller.OrderController{}.QueryByJson)
+	}
+
 	return router
 }
