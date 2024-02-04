@@ -3,11 +3,15 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"go-web-in-action/controller"
+	"go-web-in-action/pkg/logger"
 	"net/http"
 )
 
 func Router() *gin.Engine {
 	router := gin.Default()
+
+	router.Use(gin.LoggerWithConfig(logger.LoggerToFile()))
+	router.Use(logger.Recover)
 
 	user := router.Group("/user")
 	{
