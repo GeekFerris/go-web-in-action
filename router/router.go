@@ -15,7 +15,7 @@ func Router() *gin.Engine {
 
 	user := router.Group("/user")
 	{
-		user.GET("/info", controller.UserController{}.GetUserInfo)
+		user.GET("/info/:id", controller.UserController{}.GetUserInfo)
 		user.GET("/", func(context *gin.Context) {
 			context.JSON(http.StatusOK, "")
 		})
