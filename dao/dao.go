@@ -15,7 +15,8 @@ var (
 )
 
 func init() {
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local&timeout=%ss", config.Username, config.Pwd, config.Host, config.Host, config.Db, config.Timeout)
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local&timeout=%ss", config.Username, config.Pwd, config.Host, config.Port, config.Db, config.Timeout)
+	fmt.Println(dsn)
 	_db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		logger.Error(map[string]interface{}{

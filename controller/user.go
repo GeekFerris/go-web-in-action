@@ -12,6 +12,6 @@ type UserController struct {
 func (u UserController) GetUserInfo(c *gin.Context) {
 	idStr := c.Param("id")
 	id, _ := strconv.Atoi(idStr)
-	user, _ := model.GetUserTest(id)
+	user := model.GetUserTest(id)
 	Success(c, 0, "success", user, 1)
 }

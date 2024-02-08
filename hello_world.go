@@ -1,8 +1,6 @@
 package main
 
-import (
-	"go-web-in-action/router"
-)
+import "go-web-in-action/router"
 
 func main() {
 
