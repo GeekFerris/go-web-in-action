@@ -7,7 +7,7 @@ import (
 type OrderController struct {
 }
 
-type Condition struct {
+type condition struct {
 	Name string `json:"name"`
 	Age  int    `json:"age"`
 }
@@ -25,7 +25,7 @@ func (o OrderController) QueryByJson(c *gin.Context) {
 	//} else {
 	//	Error(c, 0, "error")
 	//}
-	search := &Condition{}
+	search := &condition{}
 
 	err := c.BindJSON(&search)
 

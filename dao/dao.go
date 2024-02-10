@@ -30,9 +30,6 @@ func init() {
 	}
 
 	sqlDb, _ := _db.DB()
-	//db.SetMaxIdleConns(10)
-	//db.SetMaxOpenConns(100)
-	//db.SetConnMaxLifetime(time.Hour)
 	//设置数据库连接池参数
 	sqlDb.SetMaxOpenConns(100) //设置数据库连接池最大连接数
 	sqlDb.SetMaxIdleConns(20)  //连接池最大允许的空闲连接数，如果没有sql任务需要执行的连接数大于20，超过的连接会被连接池关闭。
